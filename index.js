@@ -3,6 +3,8 @@ const app =express();
 const path =require("path");
 const port =3000;
 
+app.use(express.static(path.join(__dirname ,"public/js")));
+app.use(express.static(path.join(__dirname ,"public/css")));
 app.set("view engine ", "ejs");
 app.set("views", path.join(__dirname , "./views"));
 
@@ -21,8 +23,14 @@ app.get("/ig/:username", (req, res) => {
      //data store
     const data =instaData[username];
     //verify data
-    console.log(data);
-    res.render("instagram.ejs" , {data});
+    // console.log(data);
+    if(data) {
+        res.render("instagram.ejs" , {data});
+    }
+    else{
+        res.render("error.ejs")
+    }
+   
 });
 
 app.get("/hello", (req,res) =>{

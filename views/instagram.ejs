@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title> Instagram </title>
-</head>
+<%- include("includes/head.ejs") %>
 <body>
-
     <h2> This page belong to @<%= data.name  %></h2>
      <button> Follow </button>
      <button> Message </button>
@@ -23,7 +15,8 @@
        <p> likes : <%= post.likes %> &nbsp; &nbsp; &nbsp; &nbsp; comments : <%= data.comments %></p>
 
     <% } %>
-
+     
 </body>
+<script src="/app.js"></script>
 </html>
 
